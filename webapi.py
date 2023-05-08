@@ -1,4 +1,4 @@
-# Set up a HTTP server to receive 
+# Set up a HTTP server to process requests from the BLE gateways
 
 
 from typing import Callable, List
