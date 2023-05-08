@@ -40,7 +40,7 @@ class GatewayMsg(BaseModel):
 class PgConnectionPool:
     def __init__(self):
         self.pool = ThreadedConnectionPool(
-            1, 10, dbname="bledata", user="louis", password="846776939", host="localhost")
+            1, 10, dbname="bledata", user="user", password="password", host="localhost")
 
     def get_connection(self):
         return self.pool.getconn()
