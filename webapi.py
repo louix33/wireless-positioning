@@ -1,3 +1,6 @@
+# Set up a HTTP server to receive 
+
+
 from typing import Callable, List
 from fastapi import FastAPI, Request, Response
 from fastapi.routing import APIRoute
@@ -6,7 +9,7 @@ import msgpack
 from psycopg2.pool import ThreadedConnectionPool
 from datetime import datetime
 
-
+# Rewrite this class to deserialize the request payload as MsgPack rather than JSON
 class MsgPackRequest(Request):
     async def body(self) -> bytes:
         if not hasattr(self, "_body"):
@@ -37,6 +40,7 @@ class GatewayMsg(BaseModel):
     devices: List[bytes]
 
 
+# Wrapper for psycopg2 connection pool
 class PgConnectionPool:
     def __init__(self):
         self.pool = ThreadedConnectionPool(
