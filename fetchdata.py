@@ -1,3 +1,6 @@
+# Fetch data from the database and store them in csv files, handy for data processing.
+
+
 import csv
 import psycopg2
 
